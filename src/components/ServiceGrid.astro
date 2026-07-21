@@ -18,7 +18,7 @@ const t = useTranslations(lang);
     {
       services.map((service, i) => (
         <li class={`bg-paper ${i === services.length - 1 && services.length % 2 === 1 ? 'sm:col-span-2' : ''}`}>
-          <a href={`/${service.slug}`} class="group relative block h-full p-8 transition-colors hover:bg-surface">
+          <a href={`/${service.slug}/`} class="group relative block h-full p-8 transition-colors hover:bg-surface">
             <span class="label-mono text-accent-strong" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
             <h3 class="font-display mt-2 text-2xl text-ink">{service.title}</h3>
             <p class="relative mt-3 max-w-xs text-muted">{service.short}</p>

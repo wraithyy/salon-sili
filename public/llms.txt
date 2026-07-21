@@ -7,12 +7,12 @@
 
 ## Služby
 
-- [Kombinovaná pedikúra](https://sili.cz/pedikura)
-- [Podologie](https://sili.cz/podologie)
-- [Zarostlé nehty](https://sili.cz/zarostle-nehty)
-- [Rovnátka na nehty](https://sili.cz/rovnatka-na-nehty)
-- [Manikúra](https://sili.cz/manikura)
-- [Ceník](https://sili.cz/cenik)
+- [Kombinovaná pedikúra](https://sili.cz/pedikura/)
+- [Podologie](https://sili.cz/podologie/)
+- [Zarostlé nehty](https://sili.cz/zarostle-nehty/)
+- [Rovnátka na nehty](https://sili.cz/rovnatka-na-nehty/)
+- [Manikúra](https://sili.cz/manikura/)
+- [Ceník](https://sili.cz/cenik/)
 
 ## Kontakt
 
