@@ -100,18 +100,17 @@ p {
   text-transform: uppercase;
 }
 
-/* Subtle scroll-reveal — content fades/lifts once, no scroll-jank loops.
+/* Subtle scroll-reveal — content lifts into place once, no scroll-jank loops.
    Direct children of [data-reveal-group] stagger via nth-child delay.
-   Kept subtle (small translate, high starting opacity) so it reads as a soft
-   settle-in rather than a pop — content should never feel like it's "loading". */
+   Opacity never dips below 1: a translate-only reveal keeps text at full
+   contrast at all times (an opacity dip here previously failed WCAG contrast
+   for any content not yet scrolled into view — motion must not cost legibility). */
 @media (prefers-reduced-motion: no-preference) {
   [data-reveal] {
-    opacity: 0.85;
     transform: translateY(0.4rem);
-    transition: opacity 600ms cubic-bezier(0.22, 1, 0.36, 1), transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
   }
   [data-reveal].is-visible {
-    opacity: 1;
     transform: translateY(0);
   }
   [data-reveal-group] > * {

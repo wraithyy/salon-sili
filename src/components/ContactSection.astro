@@ -19,31 +19,31 @@ const waitlistHref = `mailto:${email}?subject=${encodeURIComponent('Zájem o ter
       <h2 class="font-display text-title mt-2">{t('contact.title')}</h2>
       <p class="mt-4 max-w-md text-muted">{t('contact.body')}</p>
 
-      <dl class="mt-8 space-y-6">
+      <div class="mt-8 space-y-6">
         <div class="flex gap-4">
           <Icon name="pin" class="mt-1 h-5 w-5 shrink-0 text-accent-strong" />
           <div>
-            <dt class="label-mono text-muted">{t('contact.addressLabel')}</dt>
-            <dd class="mt-1 text-ink">
+            <p class="label-mono text-muted">{t('contact.addressLabel')}</p>
+            <p class="mt-1 text-ink">
               {address.street}<br />
               {address.locality}, {address.postalCode}
-            </dd>
+            </p>
           </div>
         </div>
         <div class="flex gap-4">
           <Icon name="mail" class="mt-1 h-5 w-5 shrink-0 text-accent-strong" />
           <div>
-            <dt class="label-mono text-muted">{t('contact.emailLabel')}</dt>
-            <dd class="mt-1">
+            <p class="label-mono text-muted">{t('contact.emailLabel')}</p>
+            <p class="mt-1">
               <a href={`mailto:${email}`} class="text-ink hover:text-accent">{email}</a>
-            </dd>
+            </p>
           </div>
         </div>
         <div>
-          <dt class="label-mono text-muted">{t('contact.directionsLabel')}</dt>
-          <dd class="mt-1 max-w-md text-ink">{directions}</dd>
+          <p class="label-mono text-muted">{t('contact.directionsLabel')}</p>
+          <p class="mt-1 max-w-md text-ink">{directions}</p>
         </div>
-      </dl>
+      </div>
 
       <a
         href={waitlistHref}
