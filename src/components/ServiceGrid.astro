@@ -1,0 +1,38 @@
+---
+import { services } from '../data/services';
+import { useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = 'cs' } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section id="sluzby" class="mx-auto max-w-6xl px-gutter py-section" data-reveal>
+  <p class="label-mono text-accent-strong">{t('services.label')}</p>
+  <h2 class="font-display text-title mt-2 max-w-2xl">{t('services.title')}</h2>
+  <p class="mt-4 max-w-xl text-muted">{t('services.intro')}</p>
+
+  <ul class="mt-12 grid gap-px border border-hairline bg-hairline sm:grid-cols-2">
+    {
+      services.map((service, i) => (
+        <li class={`bg-paper ${i === services.length - 1 && services.length % 2 === 1 ? 'sm:col-span-2' : ''}`}>
+          <a href={`/${service.slug}`} class="group relative block h-full overflow-hidden p-8 transition-colors hover:bg-surface">
+            <span
+              class="font-display pointer-events-none absolute -top-2 right-4 text-6xl text-ink/[0.06] transition-colors group-hover:text-gold/20"
+              aria-hidden="true"
+            >
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <h3 class="font-display text-2xl text-ink">{service.title}</h3>
+            <p class="relative mt-3 max-w-xs text-muted">{service.short}</p>
+            <span class="label-mono relative mt-6 inline-block text-accent group-hover:underline">
+              Více o ošetření →
+            </span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>

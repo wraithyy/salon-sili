@@ -1,0 +1,31 @@
+---
+import type { PriceItem } from '../data/pricing';
+import { useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+  items: PriceItem[];
+  lang?: Lang;
+  showDisclaimer?: boolean;
+}
+const { items, lang = 'cs', showDisclaimer = true } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<div>
+  <table class="w-full border-collapse text-left">
+    <tbody>
+      {
+        items.map((item) => (
+          <tr class="border-b border-hairline">
+            <td class="py-3 pr-4 text-ink">
+              {item.label}
+              {item.note && <span class="ml-2 text-sm text-muted">({item.note})</span>}
+            </td>
+            <td class="py-3 text-right font-display text-lg whitespace-nowrap text-ink">{item.price} Kč</td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+  {showDisclaimer && <p class="mt-4 text-sm text-muted">{t('pricing.disclaimer')}</p>}
+</div>

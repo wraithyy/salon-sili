@@ -1,0 +1,14 @@
+---
+import { useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = 'cs' } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<div role="status" class="border-b-2 border-rose-gold bg-rose-gold-bg px-gutter py-3 text-center">
+  <p class="text-sm font-semibold text-ink sm:text-base">{t('notice.text')}</p>
+  <p class="mt-1 text-sm font-bold text-ink sm:text-base">{t('notice.disclaimer')}</p>
+</div>

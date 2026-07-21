@@ -1,0 +1,24 @@
+---
+// Monogram badge — tracked caps around a hairline ring, script wordmark at center.
+// A quiet "Est." signal borrowed from private-clinic and boutique-salon branding.
+interface Props {
+  class?: string;
+}
+const { class: className = 'h-28 w-28' } = Astro.props;
+---
+
+<svg class={className} viewBox="0 0 200 200" aria-hidden="true">
+  <circle cx="100" cy="100" r="94" fill="none" stroke="var(--hairline)" stroke-width="1" />
+  <circle cx="100" cy="100" r="80" fill="none" stroke="var(--gold)" stroke-width="1" />
+  <path id="seal-ring-top" d="M 24 108 A 80 80 0 0 1 176 108" fill="none" />
+  <path id="seal-ring-bottom" d="M 176 92 A 80 80 0 0 1 24 92" fill="none" />
+  <text font-size="9.5" letter-spacing="2.5" fill="var(--muted)">
+    <textPath href="#seal-ring-top" startOffset="50%" text-anchor="middle">SALON SILI</textPath>
+  </text>
+  <text font-size="9.5" letter-spacing="2.5" fill="var(--muted)">
+    <textPath href="#seal-ring-bottom" startOffset="50%" text-anchor="middle">LIBEREC &#183; PODOLOGIE</textPath>
+  </text>
+  <text x="100" y="112" text-anchor="middle" font-family="var(--font-script)" font-size="34" fill="var(--ink)">
+    SiLi
+  </text>
+</svg>

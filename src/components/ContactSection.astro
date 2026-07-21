@@ -1,0 +1,63 @@
+---
+import { address, directions, email } from '../data/site';
+import { useTranslations, type Lang } from '../i18n/ui';
+import Icon from './Icon.astro';
+import Seal from './Seal.astro';
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = 'cs' } = Astro.props;
+const t = useTranslations(lang);
+const waitlistHref = `mailto:${email}?subject=${encodeURIComponent('Zájem o termín — až otevřete')}`;
+---
+
+<section id="kontakt" class="mx-auto max-w-6xl px-gutter py-section" data-reveal>
+  <div class="grid gap-12 sm:grid-cols-2">
+    <div>
+      <p class="label-mono text-accent-strong">{t('contact.label')}</p>
+      <h2 class="font-display text-title mt-2">{t('contact.title')}</h2>
+      <p class="mt-4 max-w-md text-muted">{t('contact.body')}</p>
+
+      <dl class="mt-8 space-y-6">
+        <div class="flex gap-4">
+          <Icon name="pin" class="mt-1 h-5 w-5 shrink-0 text-accent-strong" />
+          <div>
+            <dt class="label-mono text-muted">{t('contact.addressLabel')}</dt>
+            <dd class="mt-1 text-ink">
+              {address.street}<br />
+              {address.locality}, {address.postalCode}
+            </dd>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <Icon name="mail" class="mt-1 h-5 w-5 shrink-0 text-accent-strong" />
+          <div>
+            <dt class="label-mono text-muted">{t('contact.emailLabel')}</dt>
+            <dd class="mt-1">
+              <a href={`mailto:${email}`} class="text-ink hover:text-accent">{email}</a>
+            </dd>
+          </div>
+        </div>
+        <div>
+          <dt class="label-mono text-muted">{t('contact.directionsLabel')}</dt>
+          <dd class="mt-1 max-w-md text-ink">{directions}</dd>
+        </div>
+      </dl>
+
+      <a
+        href={waitlistHref}
+        class="label-mono mt-6 inline-block border border-accent-strong px-5 py-2.5 text-accent-strong transition-colors hover:bg-accent-strong hover:text-paper"
+      >
+        {t('contact.waitlistCta')}
+      </a>
+
+      <p class="mt-10 max-w-md border-t border-hairline pt-6 text-xs text-muted">{t('medical.disclaimer')}</p>
+    </div>
+
+    <div class="flex flex-col items-center justify-center gap-8 border border-hairline bg-surface p-12">
+      <Seal class="h-32 w-32" />
+      <p class="max-w-xs text-center text-sm text-muted">{t('contact.channelsNote')}</p>
+    </div>
+  </div>
+</section>

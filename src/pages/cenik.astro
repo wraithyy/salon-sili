@@ -1,0 +1,54 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PriceTable from '../components/PriceTable.astro';
+import Rule from '../components/Rule.astro';
+import { pricing } from '../data/pricing';
+import beigeTexture from '../assets/stock/beige-texture.jpg';
+
+const groups = [
+  { key: 'pedikura', title: 'Pedikúra' },
+  { key: 'podologie', title: 'Podologie' },
+  { key: 'manikura', title: 'Manikúra' },
+] as const;
+---
+
+<Base title="Ceník — Salon SiLi Liberec" description="Orientační ceník pedikúry, podologie a manikúry v salonu SiLi.">
+  <Header />
+  <main id="main-content">
+    <section class="relative overflow-hidden">
+      <Image
+        src={beigeTexture}
+        alt=""
+        widths={[600, 1000]}
+        sizes="40rem"
+        quality={60}
+        loading="lazy"
+        class="img-warm pointer-events-none absolute -top-24 -right-32 h-96 w-96 rounded-full opacity-40"
+      />
+      <div class="relative mx-auto max-w-3xl px-gutter py-section">
+        <p class="label-mono text-accent-strong">Ceník</p>
+        <h1 class="font-display text-display mt-2">Ceny ošetření</h1>
+        <p class="mt-6 border border-hairline bg-surface p-4 text-sm text-muted">
+          Ceny jsou orientační a mohou se lišit od aktuálního ceníku v salonu. Konečnou cenu vždy potvrdíme při
+          objednání podle rozsahu ošetření.
+        </p>
+
+        {
+          groups.map((group, i) => (
+            <div class="mt-14">
+              {i > 0 && <Rule class="mb-14" />}
+              <h2 class="font-display text-title">{group.title}</h2>
+              <div class="mt-6">
+                <PriceTable items={pricing.filter((p) => p.category === group.key)} showDisclaimer={false} />
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Base>

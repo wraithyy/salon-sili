@@ -1,0 +1,21 @@
+# Salon SiLi
+
+> Pedikérský a podologický salon v centru Liberce (Česká republika). Kombinovaná
+> pedikúra, odborná podologie (zarostlé nehty, rovnátka na nehty/ortonyxie) a
+> gelová manikúra. Provoz aktuálně přerušen (rodičovská dovolená) — web je ve
+> výstavbě, kontakt jen e-mailem.
+
+## Služby
+
+- [Kombinovaná pedikúra](https://salonsili.cz/pedikura)
+- [Podologie](https://salonsili.cz/podologie)
+- [Zarostlé nehty](https://salonsili.cz/zarostle-nehty)
+- [Rovnátka na nehty](https://salonsili.cz/rovnatka-na-nehty)
+- [Manikúra](https://salonsili.cz/manikura)
+- [Ceník](https://salonsili.cz/cenik)
+
+## Kontakt
+
+- E-mail: info@salonsili.cz
+- Adresa: náměstí Dr. E. Beneše 3/4, Liberec 1, 460 01, Česká republika
+- Salon nemá pravidelnou otevírací dobu — pouze na objednání.

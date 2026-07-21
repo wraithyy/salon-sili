@@ -1,0 +1,29 @@
+---
+import { useTranslations, type Lang } from '../i18n/ui';
+import { email, legalName, ico, address } from '../data/site';
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = 'cs' } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<footer class="border-t border-hairline">
+  <div class="mx-auto flex max-w-6xl flex-col gap-4 px-gutter py-10 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
+    <p class="font-script text-2xl text-ink">SiLi</p>
+    <p>{t('footer.colophon')}</p>
+    <a href={`mailto:${email}`} class="hover:text-accent">{email}</a>
+  </div>
+  <div class="mx-auto max-w-6xl px-gutter pb-8 text-xs text-muted">
+    {
+      legalName && ico ? (
+        <p>
+          Provozovatel: {legalName} · IČO: {ico} · {address.street}, {address.locality}
+        </p>
+      ) : (
+        <p>Provozovatel: identifikační údaje (IČO) doplníme.</p>
+      )
+    }
+  </div>
+</footer>

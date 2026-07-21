@@ -1,0 +1,81 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import PriceTable from '../components/PriceTable.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Footer from '../components/Footer.astro';
+import Rule from '../components/Rule.astro';
+import { useTranslations } from '../i18n/ui';
+import { pricing } from '../data/pricing';
+import handFur from '../assets/stock/hand-fur.jpg';
+
+const t = useTranslations('cs');
+const teaser = pricing.slice(0, 6);
+---
+
+<Base>
+  <Header />
+  <main id="main-content">
+    <Hero />
+    <ServiceGrid />
+
+    <Rule class="mx-auto max-w-6xl" />
+
+    <section class="mx-auto max-w-6xl px-gutter py-section" data-reveal>
+      <div class="grid gap-12 sm:grid-cols-2 sm:items-center">
+        <div class="order-2 sm:order-1">
+          <p class="label-mono text-accent-strong">{t('about.label')}</p>
+          <h2 class="font-display text-title mt-2">{t('about.title')}</h2>
+          <p class="mt-6 text-lg text-muted">{t('about.body')}</p>
+        </div>
+        <div class="order-1 aspect-[4/5] overflow-hidden rounded-[2rem] sm:order-2">
+          <Image
+            src={handFur}
+            alt="Detail ošetřené ruky"
+            widths={[400, 700, 1000]}
+            sizes="(min-width: 640px) 40vw, 90vw"
+            quality={65}
+            loading="lazy"
+            class="img-warm h-full w-full object-cover"
+          />
+        </div>
+      </div>
+    </section>
+
+    <Rule class="mx-auto max-w-6xl" />
+
+    <section class="mx-auto max-w-6xl px-gutter py-section" data-reveal>
+      <p class="label-mono text-accent-strong">{t('pricing.label')}</p>
+      <h2 class="font-display text-title mt-2">{t('pricing.title')}</h2>
+      <div class="mt-10 max-w-2xl">
+        <PriceTable items={teaser} showDisclaimer={false} />
+        <p class="mt-4 text-sm text-muted">{t('pricing.teaserNote')}</p>
+        <a href="/cenik" class="label-mono mt-4 inline-block text-accent hover:underline">
+          {t('pricing.viewAll')} →
+        </a>
+      </div>
+    </section>
+
+    <ContactSection />
+  </main>
+  <Footer />
+
+  <script>
+    const revealed = document.querySelectorAll('[data-reveal]');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        }
+      },
+      { threshold: 0.15 },
+    );
+    revealed.forEach((el) => observer.observe(el));
+  </script>
+</Base>
