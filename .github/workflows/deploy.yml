@@ -5,8 +5,8 @@
 #   CLOUDFLARE_ACCOUNT_ID — account ID from the Cloudflare dashboard
 #
 # First deploy creates the Pages project "salon-sili" automatically.
-# Custom domain (salonsili.cz) is attached in the Cloudflare dashboard:
-#   Pages → salon-sili → Custom domains → add salonsili.cz
+# Custom domain (sili.cz) is attached in the Cloudflare dashboard:
+#   Pages → salon-sili → Custom domains → add sili.cz
 
 name: Deploy
 

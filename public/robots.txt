@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://salonsili.cz/sitemap-index.xml
+Sitemap: https://sili.cz/sitemap-index.xml

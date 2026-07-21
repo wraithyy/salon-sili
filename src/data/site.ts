@@ -1,4 +1,4 @@
-export const email = 'info@salonsili.cz';
+export const email = 'info@sili.cz';
 // no confirmed number yet — kept out of JSON-LD until real
 export const phone: string | null = null;
 

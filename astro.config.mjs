@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://salonsili.cz',
+  site: 'https://sili.cz',
   i18n: {
     defaultLocale: 'cs',
     locales: ['cs'],

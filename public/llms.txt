@@ -7,15 +7,15 @@
 
 ## Služby
 
-- [Kombinovaná pedikúra](https://salonsili.cz/pedikura)
-- [Podologie](https://salonsili.cz/podologie)
-- [Zarostlé nehty](https://salonsili.cz/zarostle-nehty)
-- [Rovnátka na nehty](https://salonsili.cz/rovnatka-na-nehty)
-- [Manikúra](https://salonsili.cz/manikura)
-- [Ceník](https://salonsili.cz/cenik)
+- [Kombinovaná pedikúra](https://sili.cz/pedikura)
+- [Podologie](https://sili.cz/podologie)
+- [Zarostlé nehty](https://sili.cz/zarostle-nehty)
+- [Rovnátka na nehty](https://sili.cz/rovnatka-na-nehty)
+- [Manikúra](https://sili.cz/manikura)
+- [Ceník](https://sili.cz/cenik)
 
 ## Kontakt
 
-- E-mail: info@salonsili.cz
+- E-mail: info@sili.cz
 - Adresa: náměstí Dr. E. Beneše 3/4, Liberec 1, 460 01, Česká republika
 - Salon nemá pravidelnou otevírací dobu — pouze na objednání.
