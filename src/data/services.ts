@@ -12,17 +12,18 @@ export const services: Service[] = [
   {
     slug: 'pedikura',
     title: 'Kombinovaná pedikúra',
-    short: 'Mokrá i přístrojová pedikúra v jednom ošetření — kompletní péče o chodidla a nehty.',
+    short: 'Mokrá i přístrojová pedikúra s masáží chodidel v jednom ošetření — kompletní péče o chodidla a nehty.',
     benefits: [
       'Spojuje výhody klasické mokré pedikúry s přesností přístrojové techniky',
       'Odstranění zrohovatělé kůže, ošetření kutikul a tvarování nehtů',
+      'Součástí je i masáž chodidel a lýtek',
       'Vhodná jako pravidelná péče i pro citlivější nebo náročnější chodidla',
     ],
     process: [
       'Konzultace a prohlédnutí chodidel, zhodnocení stavu kůže a nehtů',
       'Změkčující lázeň a odstranění zrohovatělé kůže',
       'Přístrojové doladění detailů a úprava nehtů',
-      'Závěrečné ošetřující zábaly nebo krém, případně gel lak na nohy',
+      'Masáž chodidel a závěrečné ošetřující zábaly nebo krém, případně gel lak na nohy',
     ],
     faq: [
       {
