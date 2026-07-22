@@ -88,6 +88,16 @@ const fontPreloads = [serifWoff2, serifExtWoff2, sansWoff2, sansExtWoff2, script
         },
       })}
     />
+    {
+      import.meta.env.PROD && (
+        <script
+          is:inline
+          type="module"
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "ed331566dc174b6f8907db3d026ea839"}'
+        />
+      )
+    }
   </head>
   <body>
     <Grain />
